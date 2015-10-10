@@ -1,5 +1,7 @@
 # hierarchical-storage
 
+[![Build Status](https://travis-ci.org/analyticbastard/hierarchical-storage.svg?branch=master)](https://travis-ci.org/analyticbastard/hierarchical-storage)
+
 Tree storage of string values under hierarchical key paths
 
 ```
