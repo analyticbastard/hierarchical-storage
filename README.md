@@ -14,6 +14,8 @@ key1
 
 ## Installation
 
+Add this to your ```project.clj```
+
 ```clojure
 [analyticbastard/hierarchical-storage "0.0.1-SNAPSHOT"]
 ```
