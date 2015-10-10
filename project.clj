@@ -6,6 +6,5 @@
   :source-paths ["src/clj"]
   :java-source-paths ["src/java"]
   :dependencies [[org.clojure/clojure "1.6.0"]]
-  :main ^:skip-aot hierarchical-storage.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
