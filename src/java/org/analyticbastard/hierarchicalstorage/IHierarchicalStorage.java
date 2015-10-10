@@ -15,5 +15,5 @@ public interface IHierarchicalStorage {
 
     public void store (String key, String value);
 
-    public String recall(List<String> keyPath);
+    public String recall(Collection<String> keyPath);
 }

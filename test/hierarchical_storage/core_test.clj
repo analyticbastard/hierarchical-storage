@@ -9,7 +9,7 @@
                                                     File/separator "simple-key-storage.edn"))
           ]
       (.store storage "key" "value")
-      (is (= (.recall storage "key") "value")))))
+      (is (= (.recall storage ["key"]) "value")))))
 
 
 (comment

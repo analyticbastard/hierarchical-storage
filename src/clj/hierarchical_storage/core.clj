@@ -8,8 +8,10 @@
   (apply merge-with combine (filter map? maps)))
 
 (defn store
-  ([mem-store ^Collection coll value]
-   (swap! mem-store assoc-in coll value))
+  ([mem-store key-or-keys value]
+   (if (instance? Collection key-or-keys)
+     (swap! mem-store assoc-in key-or-keys value)
+     (swap! mem-store assoc key-or-keys value)))
   ([mem-store all]
    (swap! mem-store combine all))
   )
@@ -30,6 +32,6 @@
       (^void store [_ ^String key ^String value]
         (store mem-store (list key) value)
         (spit filename @mem-store))
-      (recall [_ coll]
+      (^String recall [_ ^Collection coll]
         (get-in @mem-store coll))
       )))

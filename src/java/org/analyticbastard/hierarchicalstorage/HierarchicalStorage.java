@@ -2,6 +2,7 @@ package org.analyticbastard.hierarchicalstorage;
 
 import clojure.java.api.Clojure;
 import clojure.lang.IFn;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -38,7 +39,14 @@ public class HierarchicalStorage implements IHierarchicalStorage {
     }
 
     @Override
-    public String recall(List<String> keyPath) {
+    public String recall(Collection<String> keyPath) {
+        return delegate.recall(keyPath);
+    }
+
+    public String recall(String key)
+    {
+        List<String> keyPath = new ArrayList<String>(1);
+        keyPath.add(key);
         return delegate.recall(keyPath);
     }
 }
